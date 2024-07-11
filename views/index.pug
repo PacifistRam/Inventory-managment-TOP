@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class = "main-content")
+    h1= title
+  
+    p This #{title} contains following Records: 
+
+    ul 
+      li #[strong Anime categories: ] !{anime_category_count}
+      li #[strong Anime's: ] !{anime_count}
