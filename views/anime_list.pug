@@ -1,0 +1,29 @@
+extends layout 
+
+block content 
+    div(class = "main-content")
+        h1= title 
+        p All anime's present in this inventory
+        if anime_list.length 
+            ul.anime-list 
+                each anime in anime_list 
+                    li 
+                        ul 
+                            li 
+                                h3.anime-title
+                                    a(href=anime.url) #{anime.anime_title}
+                            li      
+                                span.sub-heading Status: 
+                                span #{anime.status}
+                            li 
+                                span.sub-heading Total Episodes: 
+                                span #{ anime.episodes}
+                            li 
+                                span.sub-heading Category 
+                                a(href=anime.anime_category.url) #{anime.anime_category.category_name}
+                                
+                
+
+
+        else 
+            p No anime's are present 

@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    div(class = "main-content")
+        h1= title 
+
+        p.description #{anime_category.category_desc}
+
+        p Following anime's Are available in this category 
+            if animeFound.length
+                ul 
+                    each anime in animeFound
+                        li 
+                            h3  
+                                a(href=anime.url ) #{anime.anime_title}
+            

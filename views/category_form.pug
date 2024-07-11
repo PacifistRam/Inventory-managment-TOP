@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    div(class = "main-content")
+        h1= title
+
+        form(action='', method='post' class='category-form')
+            label(for='category-name') Category Name:
+            input#category-name(type='text', 
+            name='category-name', required='')
+            
+            label(for='category-desc') Description:
+            textarea#category-desc(required='', minlength='30', name='category-desc' rows='5' )
+            
+            input(type='submit', value='Submit')

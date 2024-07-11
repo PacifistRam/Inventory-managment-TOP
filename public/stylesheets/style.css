@@ -11,7 +11,24 @@ a {
   color: #00B7FF;
   text-decoration: none;
 }
-li{
+input[type="text"],textarea{
+  background: transparent;
+  border: 1px solid black;
+  outline: none;
+  font: inherit;
+}
+input[type="submit"]{
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font: inherit;
+}
+label{
+  font: inherit;
+}
+
+.sidebar-nav li{
   list-style: none;
 }
 .sidebar-nav{
@@ -30,7 +47,60 @@ li{
   
 
 .main {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 2rem;
 
+}
+
+.anime-list {
+  display: flex;
+  flex-direction:column ;
+  gap: 1rem;
+}
+.sub-heading{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.category-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  font-size: 1.1rem;
+  padding-inline: 1rem;
+}
+.category-form label{
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.category-form input[type="text"],.category-form textarea{
+  padding: 0.4rem 0.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.category-form input[type="submit"]{
+  width: max-content;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid black;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: rgb(240, 233, 233);
+  color: #026c96
+}
+.category-form input[type="submit"]:hover{
+  color:#026c96 ;
+  background-color: #ffff;
+}
+ 
+.category-form input[type="text"]:focus,
+.category-form textarea:focus {
+  outline: 2px solid dodgerblue; /* Add a blue outline on focus */
 }

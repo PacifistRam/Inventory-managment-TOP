@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    div(class = "main-content")
+        h1= title 
+        if anime_categories.length 
+            ul 
+                each category in anime_categories 
+                    li 
+                        h3.category-title
+                         a(href=category.url) #{category.category_name}
+                
+
+
+        else 
+            p No categories are present 

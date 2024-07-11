@@ -1,0 +1,19 @@
+extends layout 
+
+block content 
+    div(class = "main-content")
+        h1= title 
+
+        p.description #{animeDetails.anime_desc}
+
+        p other details 
+            ul 
+                li 
+                    span.sub-heading Status: 
+                    span #{animeDetails.status}
+                li 
+                    span.sub-heading Total Episodes: 
+                    span #{animeDetails.episodes}
+                li 
+                    span.sub-heading Ratings: 
+                    span #{animeDetails.rating}
