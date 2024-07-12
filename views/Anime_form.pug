@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+    div(class = "main-content")
+        h1= title
+
+        form(action='', method='post' class='category-form')
+            label(for='anime-name') Category Name:
+            input#anime-name(type='text', 
+            name='animeName', required )
+            
+            label(for='anime-desc') Description:
+            textarea#anime-desc(required, minlength='30', name='animeDesc' rows='5' ) 
+            
+            div.other-anime-fields
+                div.category-field-group
+                    label(for='category-select') category:
+                    select#category-select.select-field(name='categorySelect', required)
+                        option(value='') -- available category--
+                        each category in allCategories
+                            option(value=category._id) #{category.category_name}
+                div.category-field-group
+                    label(for="ratings") Ratings:
+                    select#ratings.select-field(name="ratings",required)
+                        each rate in [0,1,2,3,4,5,6,7,8,9,10] 
+                            option(value=rate) #{rate}  
+                div.category-field-group
+                    label(for="status") Status:
+                    select#status.select-field(name="status",required) 
+                        option(value="Currently Airing") Currently Airing 
+                        option(value="Finished Airing")  Finished Airing 
+                div.category-field-group
+                    label(for="episodes") Episodes: 
+                    input#episodes(type="number" name="episodes" required  min=1) 
+
+            input(type='submit', value='Submit')
+
+
+            if errors 
+                ul 
+                    for error in errors 
+                        li= error.msg

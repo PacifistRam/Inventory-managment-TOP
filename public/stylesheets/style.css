@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 body {
   padding: 50px;
   font-size: 16px;
@@ -92,6 +95,7 @@ label{
   font-size: 1.1rem;
   border-radius: 5px;
   font-weight: 500;
+  margin-top: 2rem;
   background-color: rgb(240, 233, 233);
   color: #026c96
 }
@@ -103,4 +107,30 @@ label{
 .category-form input[type="text"]:focus,
 .category-form textarea:focus {
   outline: 2px solid dodgerblue; /* Add a blue outline on focus */
+}
+
+.other-anime-fields{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.other-anime-fields>*{
+  flex-basis: calc(50% - 0.5rem);
+}
+.category-field-group{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+select.select-field,input[type="number"]{
+    line-height: normal;
+    background-color: #ffff;  
+    border: 1px solid black;
+    height: 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+input[type="number"]{
+  width: auto;
 }

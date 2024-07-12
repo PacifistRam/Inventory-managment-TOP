@@ -48,7 +48,9 @@ exports.anime_detail = asyncHandler(async (req, res, next) => {
 
 // display anime create form
 exports.anime_create_get = asyncHandler(async (req, res, next) => {
-  res.send("NOT IMPLEMENTED: Anime create get");
+  const  allAnimeCategories = await AnimeCategory.find({},"category_name").exec();
+  console.log(allAnimeCategories)
+  res.render("Anime_form", { title: "Add A New Anime",allCategories:allAnimeCategories });
 });
 
 //  handle anime create post
